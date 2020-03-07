@@ -1,0 +1,12 @@
+# for development
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+#no need to copy, instead, we can put reference in container pointing at local machine 
+COPY . . 
+    
+CMD ["npm", "run", "start"]
