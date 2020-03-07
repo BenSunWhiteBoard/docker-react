@@ -11,4 +11,6 @@ RUN npm run build
 # /app/build: all the staff
 # run phrase
 FROM nginx
+# for aws, map incoming traffic directly
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
